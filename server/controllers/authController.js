@@ -1,4 +1,4 @@
-import Users from "../models/userModel.js";
+import Teacher from "../models/teacherModel.js";
 
 export const register = async (req, res, next) => {
   const { firstName, lastName, email, password } = req.body;
@@ -19,32 +19,32 @@ export const register = async (req, res, next) => {
   }
 
   try {
-    const userExist = await Users.findOne({ email });
+    const userExist = await Teacher.findOne({ email });
 
     if (userExist) {
       next("Email Address already exists");
       return;
     }
 
-    const user = await Users.create({
+    const teacher = await Teacher.create({
       firstName,
       lastName,
       email,
       password,
     });
 
-    // user token
-    const token = await user.createJWT();
+    // teacher token
+    const token = await teacher.createJWT();
 
     res.status(201).send({
       success: true,
       message: "Account created successfully",
-      user: {
-        _id: user._id,
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: user.email,
-        accountType: user.accountType,
+      teacher: {
+        _id: teacher._id,
+        firstName: teacher.firstName,
+        lastName: teacher.lastName,
+        email: teacher.email,
+        accountType: teacher.accountType,
       },
       token,
     });
@@ -65,24 +65,24 @@ export const signIn = async (req, res, next) => {
     }
 
     // find user by email
-    const user = await Users.findOne({ email }).select("+password");
+    const teacher = await teacher.findOne({ email }).select("+password");
 
-    if (!user) {
+    if (!teacher) {
       next("Invalid -email or password");
       return;
     }
 
     // compare password
-    const isMatch = await user.comparePassword(password);
+    const isMatch = await teacher.comparePassword(password);
 
     if (!isMatch) {
       next("Invalid email or password");
       return;
     }
 
-    user.password = undefined;
+    teacher.password = undefined;
 
-    const token = user.createJWT();
+    const token = teacher.createJWT();
 
     res.status(201).json({
       success: true,

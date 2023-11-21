@@ -1,16 +1,16 @@
-import NoProfile from "./userprofile.png";
-import HeroImage from "./hero.png";
-import Google from "./google.png";
-import Linkedin from "./linkedin.png";
-import Youtube from "./youtube.png";
-import WhatsApp from "./whatsapp.png";
-import Twitter from "./twitter.png";
-import Instagram from "./instagram.png";
-import Spotify from "./spotify.png";
-import Office from "./office.jpg";
-import JobImg from "./job.jpg";
-import Facebook from "./facebook.png";
-import CodeWave from "./codewave.png";
+import NoProfile from './userprofile.png';
+import HeroImage from './jermia.jpg';
+import Google from './google.png';
+import Linkedin from './examprepare.png';
+import Youtube from './youtube.png';
+import WhatsApp from './Sports and Fitness Tutors.jpeg';
+import Twitter from './english1.jpg';
+import Instagram from './Special Needs Tutors.jpg';
+import Spotify from './High School Subject-Specific Tutors.jpg';
+import Office from './office.jpg';
+import JobImg from './job.jpg';
+import Facebook from './Study Skills and Organization Tutor.jpg';
+import CodeWave from './debo.png';
 
 export {
   CodeWave,

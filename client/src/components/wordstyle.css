@@ -1,0 +1,39 @@
+.animation {
+  display: inline-flex;
+  margin: 0;
+  vertical-align: top;
+}
+
+.animation .word {
+  position: absolute;
+  display: flex;
+  opacity: 0;
+}
+.word {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.fade-in {
+  opacity: 1;
+}
+.letter.hidden {
+  opacity: 0;
+}
+
+.animation .word .letter {
+  transform-origin: center center 25px;
+}
+
+.animation .word .letter.out {
+  transform: rotatex(90deg);
+  transition: 0.32s cubic-bezier(0.6, 0, 0.7, 0.2);
+}
+
+.animation .word .letter.in {
+  transition: 0.38s ease;
+}
+
+.animation .word .letter.behind {
+  transform: rotatex(-90deg);
+}

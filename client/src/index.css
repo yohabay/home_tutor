@@ -1,4 +1,3 @@
-
 :root {
   font-family: Inter, Arial, sans-serif;
   line-height: 1.5;
@@ -10,11 +9,10 @@ a {
   text-decoration: inherit;
 }
 
-
 /* #18171D #212121 */
-li:hover{
-font-weight: 700;
-color: #1676CC;
+li:hover {
+  font-weight: 700;
+  color: #1676cc;
 }
 
 body {
@@ -94,8 +92,6 @@ body {
   pointer-events: all;
   position: relative;
 }
-
-
 
 .dots-container {
   display: flex;

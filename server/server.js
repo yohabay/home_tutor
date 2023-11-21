@@ -26,6 +26,7 @@ app.use(xss());
 app.use(mongoSanitize());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(mongoSanitize());
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
 
@@ -37,5 +38,5 @@ app.use(router);
 app.use(errorMiddleware);
 
 app.listen(PORT, () => {
-  console.log(`Dev Server running on port: ${PORT}`);
+  console.log(`jobFinder  Server running on port: ${PORT}`);
 });
